@@ -9,12 +9,19 @@ Documenting my procedure for installing latest Debian (Bullseye) on the NetGear 
 4. https://ftp.debian.org/debian/dists/bullseye/main/installer-armel/current/images/kirkwood/netboot/marvell/guruplug/
 
 I couldn't get the USB instructions (2) to work, so I used tftpboot:
+
 setenv serverip 192.168.0.165 // Set the IP of your TFTP server
-Marvell>> setenv ipaddr 192.168.0.199 // Set the IP address of 
-Marvell>> setenv gatewayip 192.168.0.1
+
+setenv ipaddr 192.168.0.199 // Set the IP address of your NAS (will not be permenent, pick anything in your subnet)
+
+setenv gatewayip 192.168.0.1
+
 tftpboot 1200000 uImage
+
 tftpboot 2000000 uInitrd
+
 set bootargs console=ttyS0,115200 earlyprintk
+
 bootm 0x1200000 0x2000000
 
 Now the debian installer should start
