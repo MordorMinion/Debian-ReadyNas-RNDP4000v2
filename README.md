@@ -10,9 +10,9 @@ Documenting my procedure for installing latest Debian (Bullseye) on the NetGear 
 
 I couldn't get the USB instructions (2) to work, so I used tftpboot:
 
-setenv serverip 192.168.0.165 // Set the IP of your TFTP server
+setenv serverip 192.168.0.165
 
-setenv ipaddr 192.168.0.199 // Set the IP address of your NAS (will not be permenent, pick anything in your subnet)
+setenv ipaddr 192.168.0.199
 
 setenv gatewayip 192.168.0.1
 
